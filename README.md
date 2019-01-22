@@ -1,0 +1,2 @@
+# BestActivityResult
+一行代码解决onActivityResult维护困难问题
