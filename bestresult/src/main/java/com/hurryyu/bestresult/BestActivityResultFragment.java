@@ -5,16 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.TreeMap;
 
 /**
  * @author HurryYu
  */
 public class BestActivityResultFragment extends Fragment {
-    private static final Map<Integer, OnActivityResultListener> LISTENER_MAP = new LinkedHashMap<>();
-    private static final TreeSet<Integer> REQUEST_CODE = new TreeSet<>();
+    private static final TreeMap<Integer, OnActivityResultListener> LISTENER_MAP = new TreeMap<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,11 +27,10 @@ public class BestActivityResultFragment extends Fragment {
 
     private int getRequestCode() {
         int requestCode;
-        if (REQUEST_CODE.size() == 0) {
+        if (LISTENER_MAP.isEmpty()) {
             requestCode = 1;
-            REQUEST_CODE.add(requestCode);
         } else {
-            requestCode = REQUEST_CODE.last() + 1;
+            requestCode = LISTENER_MAP.lastKey() + 1;
         }
         return requestCode;
     }

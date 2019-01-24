@@ -1,8 +1,8 @@
 package com.hurryyu.bestactivityresult;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 public class ResultActivity extends AppCompatActivity {
@@ -13,7 +13,9 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         Button btnReturnData = findViewById(R.id.btn_return_data);
         btnReturnData.setOnClickListener(v -> {
-            setResult(RESULT_OK);
+            Intent intent = new Intent();
+            intent.putExtra("data", "The message returned from the ResultActivity");
+            setResult(RESULT_OK, intent);
             finish();
         });
     }

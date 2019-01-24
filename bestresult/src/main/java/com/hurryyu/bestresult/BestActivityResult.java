@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
+import java.util.Objects;
+
 /**
  * @author HurryYu
  */
@@ -14,7 +16,7 @@ public class BestActivityResult {
     private BestActivityResultFragment mBestActivityResultFragment;
 
     public BestActivityResult(@NonNull Fragment fragment) {
-        this(fragment.getActivity());
+        this(Objects.requireNonNull(fragment.getActivity()));
     }
 
     public BestActivityResult(@NonNull FragmentActivity activity) {
