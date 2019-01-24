@@ -1,9 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
-
-
 
     defaultConfig {
         minSdkVersion 15
@@ -34,4 +33,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+publish {
+    userOrg = 'hurryyu'
+    groupId = 'com.hurryyu'
+    artifactId = 'BestActivityResult'
+    publishVersion = '1.0.0'
+    desc = '一行代码解决onActivityResult维护困难问题'
+    website = 'https://github.com/HurryYU/BestActivityResult'
 }
